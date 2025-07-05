@@ -36,7 +36,7 @@ $apps = @(
         Url  = "https://download.teamviewer.com/download/TeamViewer_Setup.exe"
         Installer = "TeamViewerSetup.exe"
         Arguments = "/S"
-        VerifyPath = "C:\Program Files\TeamViewer\TeamViewer.exe"
+        VerifyPath = "C:\Program Files (x86)\TeamViewer\TeamViewer.exe"
     },
     @{
         Name = "Firefox"
@@ -58,7 +58,7 @@ $apps = @(
         Url  = "https://zoom.us/client/latest/ZoomInstallerFull.msi"
         Installer = "ZoomInstaller.msi"
         Arguments = "/quiet"
-        VerifyPath = "C:\Program Files\Zoom\bin\Zoom.exe"
+        VerifyPath = "C:\Program Files (x86)\Zoom\bin\Zoom.exe"
         IsMSI = $true
     },
     @{
