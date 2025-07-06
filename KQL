@@ -1,0 +1,8 @@
+DeviceRegistryEvents
+| where ActionType == "RegistryValueSet"
+| where RegistryKey has @"\Uninstall\" 
+| where RegistryValueName == "DisplayName"
+| where tolower(RegistryValueData) has_any ("firefox", "chrome", "teamviewer", "zoom")
+| project Timestamp, DeviceName, AppName = RegistryValueData, RegistryKey
+| summarize LatestInstall = max(Timestamp) by DeviceName, AppName
+| order by LatestInstall desc
